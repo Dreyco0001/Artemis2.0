@@ -1,4 +1,4 @@
-![logo_duogo_white](https://github.com/user-attachments/assets/20937f55-d2b0-4778-9447-05a179d5f264)
+![logo_Artemis_white](https://github.com/user-attachments/assets/20937f55-d2b0-4778-9447-05a179d5f264)
 
 <p align="left">
    <img src="https://img.shields.io/badge/STATUS-EN%20DESAROLLO-purple">
@@ -10,7 +10,7 @@
 
 ## 🚗 _Creado por alumnos para alumnos_
 
-DuoGO es una aplicación movil diseñada para **movilizar** a los estudiantes de Duoc UC sede Puente Alto.
+Artemis es una aplicación movil diseñada para **movilizar** a los estudiantes de Duoc UC sede Puente Alto.
 
 Para poder utilizar esta app, debes seguir estos pasos:
 
@@ -42,9 +42,9 @@ Para poder utilizar esta app, debes seguir estos pasos:
 > - GitHub
 
 1. Clona el código Fuente:
-- `https://github.com/fe-berrios/aplicacionDuogo.git`
+- `https://github.com/fe-berrios/aplicacionArtemis.git`
 2. Ingresa a la carpeta que esta en tu ordenador
-- `cd aplicacionDuogo/`
+- `cd aplicacionArtemis/`
 3. Instala (este paso solo lo debes realizar si es la primera vez que descargas el proyecto):
 - `npm install`
 4. Escribe en gitBash:

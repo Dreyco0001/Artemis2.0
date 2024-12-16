@@ -53,7 +53,7 @@ export class LoginPage implements OnInit {
         // Redirigir al home
         await this.mostrarAlerta(
           'Inicio de sesión exitoso',
-          'Bienvenido a Duogo :D'
+          'Bienvenido a Artemis :D'
         );
         this.router.navigate(['/home']);
       } else {

@@ -129,7 +129,7 @@ describe('Página de registro', () => {
     });
   
     expect(component.mostrarAlerta).toHaveBeenCalledWith(
-      'Gracias por registrarse en DuoGO!',
+      'Gracias por registrarse en Artemis!',
       '¡¡Sus datos han sido ingresados con éxito!!'
     );
     expect(routerSpy).toHaveBeenCalledWith(['/login']);

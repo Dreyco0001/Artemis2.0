@@ -7,21 +7,7 @@
 
   <ion-card class="custom-card">
     <form [formGroup]="usuario" (ngSubmit)="registroUsuario()" style="margin: 20px;">
-      <ion-input 
-        formControlName="rut" 
-        type="text" 
-        label="RUT" 
-        labelPlacement="stacked" 
-        fill="outline" 
-        placeholder="12345678-9" 
-        helperText="Sin puntos y con guión."
-        [class.invalid]="usuario.get('rut')?.invalid && usuario.get('rut')?.touched">
-      </ion-input>
-      <ion-text *ngIf="usuario.get('rut')?.invalid && usuario.get('rut')?.touched" color="danger">
-        RUT inválido. Verifica el formato
-      </ion-text>
-      <br>
-
+      
       <ion-input 
         formControlName="nombre" 
         type="text" 
@@ -51,6 +37,38 @@
         Apellido inválido. Solo se permiten letras
       </ion-text>
       <br>
+      
+      <ion-input 
+        formControlName="rut" 
+        type="text" 
+        label="RUT" 
+        labelPlacement="stacked" 
+        fill="outline" 
+        placeholder="12345678-9" 
+        helperText="Sin puntos y con guión."
+        [class.invalid]="usuario.get('rut')?.invalid && usuario.get('rut')?.touched">
+      </ion-input>
+      <ion-text *ngIf="usuario.get('rut')?.invalid && usuario.get('rut')?.touched" color="danger">
+        RUT inválido. Verifica el formato
+      </ion-text>
+      <br>
+
+
+      <ion-input 
+        formControlName="telefono" 
+        type="text" 
+        label="Teléfono" 
+        labelPlacement="stacked" 
+        fill="outline" 
+        placeholder="912345678" 
+        helperText="Debe tener 9 dígitos/solo números"
+        [class.invalid]="usuario.get('telefono')?.invalid && usuario.get('telefono')?.touched">
+      </ion-input>
+      <ion-text *ngIf="usuario.get('telefono')?.invalid && usuario.get('telefono')?.touched" color="danger">
+        Teléfono inválido. Debe tener 9 dígitos!
+      </ion-text>
+      <br>
+      
 
       <ion-list>
         <ion-label>Género</ion-label>
@@ -74,20 +92,7 @@
       </ion-text>
       <br>
 
-      <ion-input 
-        formControlName="telefono" 
-        type="text" 
-        label="Teléfono" 
-        labelPlacement="stacked" 
-        fill="outline" 
-        placeholder="912345678" 
-        helperText="Debe tener 9 dígitos/solo números"
-        [class.invalid]="usuario.get('telefono')?.invalid && usuario.get('telefono')?.touched">
-      </ion-input>
-      <ion-text *ngIf="usuario.get('telefono')?.invalid && usuario.get('telefono')?.touched" color="danger">
-        Teléfono inválido. Debe tener 9 dígitos!
-      </ion-text>
-      <br>
+      
 
       <ion-input 
         formControlName="correo" 
@@ -104,11 +109,7 @@
       </ion-text>
       <br>
 
-      <ion-item>
-        <ion-checkbox formControlName="esConductor" slot="start"></ion-checkbox>
-        <ion-label>Eres conductor?</ion-label>
-      </ion-item>
-      <br>
+      
 
       <ion-input 
         *ngIf="usuario.get('esConductor')?.value" 
@@ -157,6 +158,12 @@
       <ion-text *ngIf="usuario.get('contrasena_confirmar')?.value !== usuario.get('contrasena')?.value" color="danger">
         Las contraseñas no coinciden
       </ion-text>
+      <br>
+
+      <ion-item>
+        <ion-checkbox formControlName="esConductor" slot="start"></ion-checkbox>
+        <ion-label>Eres conductor?</ion-label>
+      </ion-item>
       <br>
 
       <ion-button [disabled]="!usuario.valid" color="warning" expand="full" fill="outline" shape="round" type="submit">

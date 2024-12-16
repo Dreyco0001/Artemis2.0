@@ -11,9 +11,9 @@ import { UsuarioService } from 'src/app/services/usuario.service';
 const mockEnvironment = {
   firebase: {
     apiKey: "AIzaSyBRjLaEmQocE-qX2ddgX3A01QlKwW9V2fo",
-    authDomain: "aplicacionduogo.firebaseapp.com",
-    projectId: "aplicacionduogo",
-    storageBucket: "aplicacionduogo.firebasestorage.app",
+    authDomain: "aplicacionArtemis.firebaseapp.com",
+    projectId: "aplicacionArtemis",
+    storageBucket: "aplicacionArtemis.firebasestorage.app",
     messagingSenderId: "1065288512577",
     appId: "1:1065288512577:web:3c530bdf894ee04474c2c0"
   }

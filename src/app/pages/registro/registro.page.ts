@@ -122,7 +122,7 @@ export class RegistroPage implements OnInit {
 
       const usuarioCreado = await this.fireService.crearUsuario(nuevoUsuario);
       if (usuarioCreado) {
-        await this.mostrarAlerta('Éxito', 'Usuario creado con éxito. ¡Gracias por registrarte en DuoGO!');
+        await this.mostrarAlerta('Éxito', 'Usuario creado con éxito. ¡Gracias por registrarte en A!');
         this.usuario.reset();
         this.router.navigate(['/login']);
       } else {

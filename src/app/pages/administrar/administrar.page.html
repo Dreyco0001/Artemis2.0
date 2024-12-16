@@ -5,8 +5,10 @@
 </ion-header>
 
 <ion-content class="ion-padding">
+  <ion-grid class="fondo">
 
-  <!-- Botones para alternar entre administración de usuarios y viajes -->
+    
+    <!-- Botones para alternar entre administración de usuarios y viajes -->
   <div style="display: flex; justify-content: space-around; margin-bottom: 20px;">
     <ion-button (click)="mostrarUsuarios()">Administrar Usuarios</ion-button>
     <ion-button (click)="mostrarViajes()">Administrar Viajes</ion-button>
@@ -55,14 +57,14 @@
           <br>
           <ion-input formControlName="contrasena_confirmar" type="password" label="Confirmar Contraseña" labelPlacement="stacked" fill="outline" helperText="Debe ser la misma!"></ion-input>
           <br>
-
+          
           <!-- Checkbox para conductor -->
           <ion-item>
             <ion-checkbox formControlName="esConductor" slot="start"></ion-checkbox>
             <ion-label>Eres conductor?</ion-label>
           </ion-item>
           <br>
-
+          
           <!-- Campos adicionales si es conductor -->
           <ion-input *ngIf="persona.get('esConductor')?.value" formControlName="patente" type="text" label="Patente" labelPlacement="stacked" fill="outline" helperText="Debe ser una patente válida."></ion-input>
           <br>
@@ -70,7 +72,7 @@
           <br>
           <ion-input *ngIf="persona.get('esConductor')?.value" formControlName="capacidad_auto" type="number" label="Capacidad de auto" labelPlacement="stacked" fill="outline" helperText="Solo números, mínimo 2."></ion-input>
           <br>
-
+          
           <!-- Botones de acción -->
           <ion-button expand="block" color="success" type="submit">REGISTRAR</ion-button>
           <ion-button expand="block" color="warning" (click)="updateUsuario()">MODIFICAR</ion-button>
@@ -125,7 +127,7 @@
           <br>
           <ion-input formControlName="hora_salida" type="time" label="Hora de salida" labelPlacement="stacked" fill="outline" helperText="Debe ser una hora válida"></ion-input>
           <br>
-
+          
           <ion-radio-group formControlName="forma_pago">
             <ion-radio value="Efectivo">Efectivo</ion-radio>
             <ion-radio value="Transferencia">Transferencia</ion-radio>
@@ -167,4 +169,5 @@
     </ion-list>
   </div>
 
+</ion-grid>
 </ion-content>

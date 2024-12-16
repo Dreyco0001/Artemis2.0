@@ -1,3 +1,22 @@
+ion-content {
+  ion-grid {
+   
+    background-size: contain; // Ajusta el tamaño para que se contenga en la pantalla
+    background-attachment: fixed;
+    background-color: #941f34;
+    color: #ffffff; // Cambia el color de las letras a blanco
+    height: 100%;
+  }
+  ion-card, ion-input, ion-button, ion-label, p {
+    color: #ffffff; // Cambia el color de las letras a blanco
+  }
+  a[routerLink="/registro"] {
+    color: #c3ff7e; // Mantén el color original del enlace "Registro"
+  }
+}
+
+
+
 .imagen {
     display: flex;
     justify-content: center; /* Centra horizontalmente */

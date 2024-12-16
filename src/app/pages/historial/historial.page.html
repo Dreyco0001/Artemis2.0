@@ -8,52 +8,55 @@
 </ion-header>
 
 <ion-content class="ion-padding">
+  <ion-grid class="fondo">
 
-  <!-- Mostrar historial para conductores -->
-  <div *ngIf="tipoUsuario === 'estudiante_conductor'">
-    <ion-card *ngIf="viajesConductor.length === 0">
-      <ion-card-content>
-        <h2>No tienes viajes finalizados como conductor.</h2>
-      </ion-card-content>
-    </ion-card>
-    <ion-card *ngFor="let viaje of viajesConductor">
-      <ion-card-content>
-        <ion-item>
-          <ion-avatar slot="start">
-            <img [src]="viaje.imagen_conductor" alt="Imagen del conductor" />
-          </ion-avatar>
-          <ion-label>
-            <p><strong>Destino:</strong> {{ viaje.nombre_destino }}</p>
-            <p><strong>Estado:</strong> Finalizado</p>
-            <p><strong>Costo:</strong> {{ viaje.costo | currency:'CLP' }}</p>
-          </ion-label>
-        </ion-item>
-      </ion-card-content>
-    </ion-card>
-  </div>
-
-  <!-- Mostrar historial para pasajeros -->
-  <div *ngIf="tipoUsuario === 'estudiante' || tipoUsuario === 'estudiante_conductor'">
-    <ion-card *ngIf="viajesPasajero.length === 0">
-      <ion-card-content>
-        <h2>No tienes viajes finalizados como pasajero.</h2>
-      </ion-card-content>
-    </ion-card>
-    <ion-card *ngFor="let viaje of viajesPasajero">
-      <ion-card-content>
-        <ion-item>
-          <ion-avatar slot="start">
-            <img [src]="viaje.imagen_conductor" alt="Imagen del conductor" />
-          </ion-avatar>
-          <ion-label>
-            <p><strong>Conductor:</strong> {{ viaje.estudiante_conductor }}</p>
-            <p><strong>Destino:</strong> {{ viaje.nombre_destino }}</p>
-            <p><strong>Estado:</strong> Finalizado</p>
-            <p><strong>Costo:</strong> {{ viaje.costo | currency:'CLP' }}</p>
-          </ion-label>
-        </ion-item>
-      </ion-card-content>
-    </ion-card>
-  </div>
-
-</ion-content>
+    <!-- Mostrar historial para conductores -->
+    <div *ngIf="tipoUsuario === 'estudiante_conductor'">
+      <ion-card *ngIf="viajesConductor.length === 0">
+        <ion-card-content>
+          <h2>No tienes viajes finalizados como conductor.</h2>
+        </ion-card-content>
+      </ion-card>
+      <ion-card *ngFor="let viaje of viajesConductor">
+        <ion-card-content>
+          <ion-item>
+            <ion-avatar slot="start">
+              <img [src]="viaje.imagen_conductor" alt="Imagen del conductor" />
+            </ion-avatar>
+            <ion-label>
+              <p><strong>Destino:</strong> {{ viaje.nombre_destino }}</p>
+              <p><strong>Estado:</strong> Finalizado</p>
+              <p><strong>Costo:</strong> {{ viaje.costo | currency:'CLP' }}</p>
+            </ion-label>
+          </ion-item>
+        </ion-card-content>
+      </ion-card>
+    </div>
+    
+    <!-- Mostrar historial para pasajeros -->
+    <div *ngIf="tipoUsuario === 'estudiante' || tipoUsuario === 'estudiante_conductor'">
+      <ion-card *ngIf="viajesPasajero.length === 0">
+        <ion-card-content>
+          <h2>No tienes viajes finalizados como pasajero.</h2>
+        </ion-card-content>
+      </ion-card>
+      <ion-card *ngFor="let viaje of viajesPasajero">
+        <ion-card-content>
+          <ion-item>
+            <ion-avatar slot="start">
+              <img [src]="viaje.imagen_conductor" alt="Imagen del conductor" />
+            </ion-avatar>
+            <ion-label>
+              <p><strong>Conductor:</strong> {{ viaje.estudiante_conductor }}</p>
+              <p><strong>Destino:</strong> {{ viaje.nombre_destino }}</p>
+              <p><strong>Estado:</strong> Finalizado</p>
+              <p><strong>Costo:</strong> {{ viaje.costo | currency:'CLP' }}</p>
+            </ion-label>
+          </ion-item>
+        </ion-card-content>
+      </ion-card>
+    </div>
+    
+  </ion-grid>
+  </ion-content>
+  

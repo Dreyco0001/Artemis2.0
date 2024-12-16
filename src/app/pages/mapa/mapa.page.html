@@ -5,19 +5,21 @@
 </ion-header>
 
 <ion-content>
-  <!-- Mensaje de viaje pendiente -->
-  <div *ngIf="tieneViajePendiente" class="viaje-pendiente">
-    <ion-card>
-      <ion-card-content>
-        <p>
-          Tienes un viaje 
-          <ion-badge [color]="viajeUsuario?.estado_viaje === 'Pendiente' ? 'warning' : 'success'">
-            {{ viajeUsuario?.estado_viaje }}
-          </ion-badge>
-        </p>
-  
-        <!-- Botón para cambiar el estado del viaje (solo conductor) -->
-        <ion-button 
+  <ion-grid class="fondo">
+
+    <!-- Mensaje de viaje pendiente -->
+    <div *ngIf="tieneViajePendiente" class="viaje-pendiente">
+      <ion-card>
+        <ion-card-content>
+          <p>
+            Tienes un viaje 
+            <ion-badge [color]="viajeUsuario?.estado_viaje === 'Pendiente' ? 'warning' : 'success'">
+              {{ viajeUsuario?.estado_viaje }}
+            </ion-badge>
+          </p>
+          
+          <!-- Botón para cambiar el estado del viaje (solo conductor) -->
+          <ion-button 
           *ngIf="esConductorDelViaje()" 
           color="primary" 
           (click)="toggleEstadoViaje()">
@@ -26,8 +28,9 @@
       </ion-card-content>
     </ion-card>
   </div>
-
+  
   <!-- Mapa -->
   <div id="map_map"></div>
+</ion-grid>
 </ion-content>
 

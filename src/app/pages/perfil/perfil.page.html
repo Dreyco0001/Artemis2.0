@@ -5,9 +5,11 @@
 </ion-header>
 
 <ion-content class="ion-padding">
-  <div class="center-content">
-    <div class="flip-card" (click)="toggleFlip()">
-      <div class="flip-card-inner" [class.flipped]="isFlipped">
+  <ion-grid class="fondo">
+    
+    <div class="center-content">
+      <div class="flip-card" (click)="toggleFlip()">
+        <div class="flip-card-inner" [class.flipped]="isFlipped">
         <!-- Lado frontal: Información del usuario -->
         <div class="flip-card-front">
           <ion-card *ngIf="!isEditing && usuario">
@@ -34,10 +36,10 @@
             </ion-card-header>
             <ion-card-content>
               <qrcode
-                [qrdata]="dataQR()"
-                [allowEmptyString]="true"
-                [ariaLabel]="'QR Code image with the following content...'"
-                [cssClass]="'center'"
+              [qrdata]="dataQR()"
+              [allowEmptyString]="true"
+              [ariaLabel]="'QR Code image with the following content...'"
+              [cssClass]="'center'"
                 [colorDark]="'#000000ff'"
                 [colorLight]="'#ffffffff'"
                 [elementType]="'canvas'"
@@ -46,10 +48,10 @@
                 [scale]="1"
                 [title]="'Datos del usuario'"
                 [width]="300"
-              ></qrcode>
-            </ion-card-content>
-          </ion-card>
-        </div>
+                ></qrcode>
+              </ion-card-content>
+            </ion-card>
+          </div>
       </div>
     </div> <!-- Cierre de flip-card -->
 
@@ -111,13 +113,14 @@
       </ion-card-content>
     </ion-card>
     
-
+    
     <!-- Botón para modificar perfil -->
     <ion-button expand="block" *ngIf="!isEditing" (click)="toggleEdit()">MODIFICAR PERFIL</ion-button>
-
+    
     <!-- Botones generales -->
     <ion-button expand="block" *ngIf="!isEditing" [routerLink]="['/home/historial']">HISTORIAL DE VIAJES</ion-button>
     <ion-button expand="block" *ngIf="!isEditing" (click)="logout()">CERRAR SESION</ion-button>
   </div> <!-- Cierre de center-content -->
-
+  
+</ion-grid>
 </ion-content>

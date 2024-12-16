@@ -1,3 +1,10 @@
+.fondo {
+  background-size: contain; // Ajusta el tamaño para que se contenga en la pantalla
+  background-attachment: fixed;
+  background-color: #941f34;
+  color: #ffffff; // Cambia el color de las letras a blanco
+  height: max-content; // Ajusta la altura para que ocupe toda la pantalla
+}
 .dropdown {
     padding: 10px;
     background-color: #000000;

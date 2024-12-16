@@ -1,17 +1,19 @@
 <ion-content class="ion-padding">
-  <div class="map-container">
-    <div id="map_lista"></div>
-  </div>
-  <br>
+  <ion-grid class="fondo">
 
-  <!-- Botón para crear un viaje -->
-  <ion-button 
+    <div class="map-container">
+      <div id="map_lista"></div>
+    </div>
+    <br>
+    
+    <!-- Botón para crear un viaje -->
+    <ion-button 
     *ngIf="tipoUsuario === 'estudiante_conductor' && !tieneViaje"
     expand="full" 
     [routerLink]="['/crear-viaje']" shape="round">
     Crear Viaje
   </ion-button>
-
+  
   <!-- Sección: Tu Viaje Actual -->
   <ion-card *ngIf="viajesAsignados.length > 0">
     <ion-card-header>
@@ -133,4 +135,5 @@
       </ion-label>
     </ion-card-content>
   </ion-card>
+</ion-grid>
 </ion-content>

@@ -1,0 +1,23 @@
+.imagen {
+    display: flex;
+    justify-content: center; /* Centra horizontalmente */
+    align-items: center; /* Centra verticalmente */
+    height: 25vh; /* Asegura que ocupe el 100% de la altura de la pantalla */
+  }
+  
+  .logo {
+    border-radius: 25px;
+    width: 150px; /* Ajusta el tamaño de la imagen */
+    height: auto; /* Mantiene la proporción de la imagen */
+  }
+  
+  .custom-card {
+    color: white; /* Cambia el color del texto si es necesario */
+  }
+
+  .invalid {
+    border: 1px solid red;
+  }
+  
+  
+  

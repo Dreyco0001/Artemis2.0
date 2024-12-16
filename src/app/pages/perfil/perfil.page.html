@@ -1,0 +1,123 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Perfil</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+  <div class="center-content">
+    <div class="flip-card" (click)="toggleFlip()">
+      <div class="flip-card-inner" [class.flipped]="isFlipped">
+        <!-- Lado frontal: Información del usuario -->
+        <div class="flip-card-front">
+          <ion-card *ngIf="!isEditing && usuario">
+            <ion-card-header>
+              <div class="profile-image">
+                <img *ngIf="usuario.get('imagen_api')?.value" [src]="usuario.get('imagen_api')?.value" alt="Imagen de perfil" />
+              </div>
+              <ion-card-title>{{ usuario.get('nombre')?.value }}</ion-card-title>
+              <ion-card-subtitle>RUT: {{ usuario.get('rut')?.value }}</ion-card-subtitle>
+              <ion-card-subtitle>{{ formatTipoUsuario(usuario.get('tipo_usuario')?.value || '') }}</ion-card-subtitle>
+            </ion-card-header>
+            <ion-card-content>
+              <p>Email: {{ usuario.get('correo')?.value }}</p>
+              <p>Teléfono: {{ usuario.get('telefono')?.value }}</p>
+            </ion-card-content>
+          </ion-card>
+        </div>
+
+        <!-- Lado trasero: QR Code -->
+        <div class="flip-card-back" *ngIf="!isEditing">
+          <ion-card>
+            <ion-card-header>
+              Comparte tus datos!
+            </ion-card-header>
+            <ion-card-content>
+              <qrcode
+                [qrdata]="dataQR()"
+                [allowEmptyString]="true"
+                [ariaLabel]="'QR Code image with the following content...'"
+                [cssClass]="'center'"
+                [colorDark]="'#000000ff'"
+                [colorLight]="'#ffffffff'"
+                [elementType]="'canvas'"
+                [errorCorrectionLevel]="'M'"
+                [margin]="4"
+                [scale]="1"
+                [title]="'Datos del usuario'"
+                [width]="300"
+              ></qrcode>
+            </ion-card-content>
+          </ion-card>
+        </div>
+      </div>
+    </div> <!-- Cierre de flip-card -->
+
+    <!-- Tarjeta de Modificar Perfil -->
+    <ion-card *ngIf="isEditing" class="modificar-perfil-card">
+      <ion-card-header>
+        <ion-card-title>Modificar Perfil</ion-card-title>
+      </ion-card-header>
+      <ion-card-content>
+        <form [formGroup]="usuario">
+          <ion-grid>
+            <ion-row>
+              <ion-col size="12" size-md="6">
+                <ion-item>
+                  <ion-label position="floating">Teléfono</ion-label>
+                  <ion-input formControlName="telefono"></ion-input>
+                </ion-item>
+              </ion-col>
+              <ion-col size="12" size-md="6">
+                <ion-item>
+                  <ion-label position="floating">Tipo de Usuario</ion-label>
+                  <ion-select formControlName="tipo_usuario">
+                    <ion-select-option value="estudiante">Estudiante</ion-select-option>
+                    <ion-select-option value="estudiante_conductor">Estudiante Conductor</ion-select-option>
+                  </ion-select>
+                </ion-item>
+              </ion-col>
+            </ion-row>
+            <ion-row *ngIf="usuario.get('tipo_usuario')?.value === 'estudiante_conductor'">
+              <ion-col size="12" size-md="4">
+                <ion-item>
+                  <ion-label position="floating">Nombre del Auto</ion-label>
+                  <ion-input formControlName="nombre_auto"></ion-input>
+                </ion-item>
+              </ion-col>
+              <ion-col size="12" size-md="4">
+                <ion-item>
+                  <ion-label position="floating">Capacidad del Auto</ion-label>
+                  <ion-input formControlName="capacidad_auto"></ion-input>
+                </ion-item>
+              </ion-col>
+              <ion-col size="12" size-md="4">
+                <ion-item>
+                  <ion-label position="floating">Patente</ion-label>
+                  <ion-input formControlName="patente"></ion-input>
+                </ion-item>
+              </ion-col>
+            </ion-row>
+            <ion-row class="center-buttons">
+              <ion-col size="auto">
+                <ion-button expand="block" (click)="guardarCambios()">GUARDAR CAMBIOS</ion-button>
+              </ion-col>
+              <ion-col size="auto">
+                <ion-button expand="block" color="medium" (click)="cancelEdit()">CANCELAR</ion-button>
+              </ion-col>
+            </ion-row>
+          </ion-grid>
+        </form>
+      </ion-card-content>
+    </ion-card>
+    
+
+    <!-- Botón para modificar perfil -->
+    <ion-button expand="block" *ngIf="!isEditing" (click)="toggleEdit()">MODIFICAR PERFIL</ion-button>
+
+    <!-- Botones generales -->
+    <ion-button expand="block" *ngIf="!isEditing" [routerLink]="['/home/historial']">HISTORIAL DE VIAJES</ion-button>
+    <ion-button expand="block" *ngIf="!isEditing" (click)="logout()">CERRAR SESION</ion-button>
+  </div> <!-- Cierre de center-content -->
+
+</ion-content>

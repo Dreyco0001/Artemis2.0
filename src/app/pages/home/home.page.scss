@@ -1,0 +1,34 @@
+#map_home {
+  height: 100%;  /* Cambia la altura al 100% del contenedor */
+  width: 100%;
+  position: absolute; /* Asegura que ocupe todo el espacio */
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+
+ion-content {
+  position: relative;
+}
+
+html, body, ion-content {
+  height: 100%;
+}
+
+
+/* home.page.scss */
+
+/* home.page.scss */
+
+ion-tab-bar {
+  background-color: #33302b; /* Cambia el color de fondo de los tabs */
+}
+
+ion-tab-button {
+  --color: white; /* Color del texto no seleccionado */
+  --color-selected: #ffcc00; /* Color del texto seleccionado */
+  --background: transparent; /* Asegúrate de que el fondo sea transparente */
+  --background-focused: transparent; /* Fondo al enfocar el tab */
+}
+

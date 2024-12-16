@@ -1,0 +1,32 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/olvido"></ion-back-button>
+    </ion-buttons>
+    <ion-title>Recuperar contraseña</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-card>
+    <ion-card-content>
+      <br>
+      <ion-item>
+        <ion-label position="stacked">Nueva Contraseña</ion-label>
+        <ion-input [(ngModel)]="nuevaContrasena" color="primary" type="password" placeholder="Ingrese nueva contraseña"></ion-input>
+      </ion-item>
+      <br>
+      <ion-item>
+        <ion-label position="stacked">Confirmación</ion-label>
+        <ion-input [(ngModel)]="confirmarContrasena" color="primary" type="password" placeholder="Confirme contraseña"></ion-input>
+      </ion-item>
+      <br>
+      <ion-button color="warning" expand="full" fill="outline" shape="round" (click)="cambiarContrasena()">Cambiar Contraseña</ion-button>
+
+      <!-- Mensaje de éxito o error -->
+      <ion-text *ngIf="mensaje" color="danger">
+        {{ mensaje }}
+      </ion-text>
+    </ion-card-content>
+  </ion-card>
+</ion-content>
